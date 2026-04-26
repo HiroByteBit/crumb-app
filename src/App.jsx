@@ -1,5 +1,5 @@
 import React from 'react';
-import { createHashRouter, RouterProvider } from 'react-router';
+import { createBrowserRouter, RouterProvider } from 'react-router';
 import { Shell } from './components/layout/Shell';
 import { Home } from './pages/Home';
 import { Restaurant } from './pages/Restaurant';
@@ -11,7 +11,7 @@ import { Search } from './pages/Search';
 import { Favorites } from './pages/Favorites';
 import { Profile } from './pages/Profile';
 
-const router = createHashRouter([
+const router = createBrowserRouter([
   {
     path: '/',
     element: <Shell />,
@@ -27,7 +27,9 @@ const router = createHashRouter([
       { path: 'profile', element: <Profile /> },
     ],
   },
-]);
+], {
+  basename: '/crumb-app',
+});
 
 export default function App() {
   return <RouterProvider router={router} />;
