@@ -27,7 +27,9 @@ const router = createBrowserRouter([
       { path: 'profile', element: <Profile /> },
     ],
   },
-]);
+], {
+  basename: '/crumb-app',
+});
 
 export default function App() {
   return <RouterProvider router={router} />;
